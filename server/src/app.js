@@ -1,17 +1,25 @@
-const { Router } = require('express');
 const express = require('express');
+const morgan = require('morgan');
+const routes = require('./routes/index.js')
 
-
-
+///// Creo la App /////
 const app = express()
-const route = Router()
+
+
+
+app.name = 'Alquiler de canchas';
+
+///// App use 
+app.use(morgan('dev'));
+
+
+///// Rutas
+app.use('/', routes);
 
 
 
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+
 
 
 
