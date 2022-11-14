@@ -13,7 +13,7 @@ const connectMongo = () => {
         })
         .catch(err => {
             console.error("App starting error:", err.message);
-            process.exit(1);
+            // process.exit(1);
         });
 }
 

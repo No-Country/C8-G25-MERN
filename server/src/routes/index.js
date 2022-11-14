@@ -1,14 +1,20 @@
 const { Router } = require('express');
 const modelTest = require('../models/Test')
-
+const mongoose = require('mongoose');
+const { returnHello } = require('../controllers/test');
 
 const router = Router();
 
 
 
 router.get('/', (req, res) => {
-
     res.send('Hello World!')
+})
+
+
+
+router.get('/algo', (req, res) => {
+    res.send('aca estoy')
 })
 
 
@@ -22,6 +28,10 @@ router.post('/agregar', async (req, res) => {
         console.log('No anduvo la query')
     }
 })
+
+
+
+
 
 
 module.exports = router
