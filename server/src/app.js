@@ -1,6 +1,8 @@
 const express = require('express');
 const morgan = require('morgan');
-const routes = require('./routes/index.js')
+const routes = require('./routes/test.js')
+
+
 
 ///// Creo la App /////
 const app = express()
@@ -16,7 +18,7 @@ app.use(morgan('dev'));
 
 
 ///// Rutas
-app.use('/turnos', routes);
+app.use('/test', routes);
 
 
 

@@ -40,10 +40,11 @@ datasource db {
 
 model Cancha {
   id     Int      @id
-  turnos Turnos[]
+  turnos Turno[]
+  name String
 }
 
-model Turnos {
+model Turno {
   id    Int    @id @default(autoincrement())
   email String @unique
   name  String
@@ -51,11 +52,11 @@ model Turnos {
 
   //
   id_cancha Int
-  cancha Cancha @relation(fields: [id_cancha], references: [id])
+  play Cancha @relation(fields: [id_cancha], references: [id])
 }
 
 model Dia {
-  turnos   Turnos @relation(fields: [authorId], references: [id])
+  turnos   Turno @relation(fields: [authorId], references: [id])
   authorId Int // relation scalar field  (used in the `@relation` attribute above) 
   id       Int    @id @default(autoincrement())
 }
