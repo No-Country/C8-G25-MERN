@@ -39,7 +39,6 @@ datasource db {
 
 model Cancha {
   id     Int      @id
-  name String
   turnos Turnos[]
 }
 
@@ -48,8 +47,6 @@ model Turnos {
   email String @unique
   name  String
   dia   Dia[]
-
-  //
   id_cancha Int
   cancha Cancha @relation(fields: [id_cancha], references: [id])
 }
