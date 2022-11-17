@@ -31,5 +31,5 @@ model Usuario {
   cel    Int     @unique
   nombre String
   fecha  Fecha[]
-  cancha Cancha?
+  cancha Cancha[]
 }
