@@ -27,13 +27,13 @@ export default function Home() {
         </div>
         <div className={styles.cards}>
         <p>Reservá tu cancha</p>
-        <div className={styles.box1}>
+        <div className={styles.box}>
           <p>5 VS 5</p>
         </div>
-        <div className={styles.box2}>
+        <div className={styles.box}>
           <p>7 VS 7</p>
         </div>
-        <div className={styles.box3}>
+        <div className={styles.box}>
           <p>11 VS 11</p>
         </div>
 
