@@ -37,26 +37,26 @@ datasource db {
 //   profile Profile?
 // }
 
-model Cancha {
-  id     Int      @id
-  turnos Turnos[]
-}
 
 model Turnos {
   id    Int    @id @default(autoincrement())
   email String @unique
   name  String
-  dia   Dia[]
   id_cancha Int
-  cancha Cancha @relation(fields: [id_cancha], references: [id])
+  fecha Fecha @relation( fields: [idFecha], references: [id])
+  idFecha Int
 }
 
-model Dia {
-  turnos   Turnos @relation(fields: [authorId], references: [id])
-  authorId Int // relation scalar field  (used in the `@relation` attribute above) 
-  id       Int    @id @default(autoincrement())
-}
 
-model Horario {
+model Fecha {
   id Int @id @default(autoincrement())
+  dia Int
+  mes Int
+  anio Int
+  hora Int
+  cancha Int
+  turnos Turnos[]
 }
+
+
+
