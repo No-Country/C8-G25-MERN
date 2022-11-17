@@ -1,8 +1,8 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import Navbar from '../components/Navbar/Navbar'
-import Footer from '../components/Footer'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -13,34 +13,33 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar/>
+      <Navbar />
 
       <main className={styles.container}>
         <div className={styles.header}>
-        <h1>
-          JUGÁ AL FÚTBOL
-          <br />
-
-          SIEMPRE
-        </h1>
-        <h3>Explorá las canchas disponibles</h3>
+          <h1>
+            JUGÁ AL FÚTBOL
+            <br />
+            SIEMPRE
+          </h1>
+          <h3>Explorá las canchas disponibles</h3>
         </div>
+
         <div className={styles.cards}>
-        <p>Reservá tu cancha</p>
-        <div className={styles.box}>
-          <p>5 VS 5</p>
-        </div>
-        <div className={styles.box}>
-          <p>7 VS 7</p>
-        </div>
-        <div className={styles.box}>
-          <p>11 VS 11</p>
-        </div>
-
+          <p className="titulo">Reservá tu cancha</p>
+          <div className={styles.box}>
+            <p>5 VS 5</p>
+          </div>
+          <div className={styles.box}>
+            <p>7 VS 7</p>
+          </div>
+          <div className={styles.box}>
+            <p>11 VS 11</p>
+          </div>
         </div>
       </main>
 
-<Footer/>
+      <Footer />
     </div>
-  )
+  );
 }

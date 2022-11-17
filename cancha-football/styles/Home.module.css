@@ -36,7 +36,7 @@
     align-self: center;
     padding: 0;
     margin: 0;
-    
+
 }
 
 .cards {
@@ -44,7 +44,7 @@
     display: flex;
     margin: 0 auto;
     flex-direction: column;
-    height: 400px;
+    height: 200px;
     background-color: black;
     text-align: center;
     align-items: center;
@@ -74,4 +74,12 @@
 }
 
 
+.cards{
+    height: auto;
+    color: white;
+}
+
+.cards .titulo{
+    font-size:2rem;
+}
 
