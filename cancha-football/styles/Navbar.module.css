@@ -1,0 +1,19 @@
+.body {
+    background-color: #333333;
+    margin: 0;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    color: white;
+}
+
+.menuham {
+    color: #1ca68b;
+}
+
+.logo {
+    margin: auto;
+}
