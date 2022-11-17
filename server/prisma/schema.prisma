@@ -9,54 +9,27 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// model Post {
-//   id        Int      @id @default(autoincrement())
-//   createdAt DateTime @default(now())
-//   updatedAt DateTime @updatedAt
-//   title     String   @db.VarChar(255)
-//   content   String?
-//   published Boolean  @default(false)
-//   author    User     @relation(fields: [authorId], references: [id])
-//   authorId  Int
-//   Turnos    Turnos?  @relation(fields: [turnosId], references: [id])
-//   turnosId  Int?
-// }
-
-// model Profile {
-//   id     Int     @id @default(autoincrement())
-//   bio    String?
-//   user   User    @relation(fields: [userId], references: [id])
-//   userId Int     @unique
-// }
-
-// model User {
-//   id      Int      @id @default(autoincrement())
-//   email   String   @unique
-//   name    String?
-//   posts   Post[]
-//   profile Profile?
-// }
-
-
-model Turnos {
-  id    Int    @id @default(autoincrement())
-  email String @unique
-  name  String
-  id_cancha Int
-  fecha Fecha @relation( fields: [idFecha], references: [id])
-  idFecha Int
-}
-
-
 model Fecha {
-  id Int @id @default(autoincrement())
-  dia Int
-  mes Int
-  anio Int
-  hora Int
-  cancha Int
-  turnos Turnos[]
+  id       Int     @id @default(autoincrement())
+  dia      Int
+  mes      Int
+  anio     Int
+  hora     Int
+  fUsuario Usuario @relation(fields: [fechaId], references: [id])
+  fechaId  Int
 }
 
+model Cancha {
+  idC          Int    @id @default(autoincrement())
+  nombreCancha String
+  usuario Usuario @relation(fields: [usuarioId],references: [id])
+  usuarioId    Int    @unique
+}
 
-
+model Usuario {
+  id     Int     @id @default(autoincrement())
+  cel    Int     @unique
+  nombre String
+  fecha  Fecha[]
+  cancha Cancha?
+}
