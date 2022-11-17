@@ -17,13 +17,13 @@ export default function Home() {
 
       <main className={styles.container}>
         <div className={styles.header}>
-        <h3>
+        <h1>
           JUGÁ AL FÚTBOL
           <br />
 
           SIEMPRE
-        </h3>
-        <h6>Explorá las canchas disponibles</h6>
+        </h1>
+        <h3>Explorá las canchas disponibles</h3>
         </div>
         <div className={styles.cards}>
         <p>Reservá tu cancha</p>
