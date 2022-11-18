@@ -11,9 +11,6 @@ const app = express()
 app.name = 'Alquiler de canchas';
 
 ///// App use 
-app.use(morgan('dev'));
-// app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
-// app.use(bodyParser.json({ limit: '50mb' }));
 
 
 ///// Rutas

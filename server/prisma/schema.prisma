@@ -9,27 +9,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Fecha {
-  id       Int     @id @default(autoincrement())
-  dia      Int
-  mes      Int
-  anio     Int
-  hora     Int
-  fUsuario Usuario @relation(fields: [fechaId], references: [id])
-  fechaId  Int
-}
-
-model Cancha {
-  idC          Int    @id @default(autoincrement())
-  nombreCancha String
-  usuario Usuario @relation(fields: [usuarioId],references: [id])
-  usuarioId    Int    @unique
-}
-
-model Usuario {
-  id     Int     @id @default(autoincrement())
-  cel    Int     @unique
-  nombre String
-  fecha  Fecha[]
-  cancha Cancha[]
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
 }
