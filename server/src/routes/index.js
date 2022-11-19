@@ -1,44 +1,31 @@
-const {PrismaClient} = require('@prisma/client')
+const express = require("express");
+const { PrismaClient } = require("@prisma/client");
 
+const router = express.Router();
+const { User } = new PrismaClient();
 
+router.post("/turno", async (req, res) => {
+  try {
+     await User.create({
+      data: {
+        email: "abcd",
+        celular: 2121,
+      },
+    });
+    res.send("se agrego correctamente");
+    await prisma.$disconnect();
+  } catch (err) {
+    console.log(err);
+    res.send(err);
+    await prisma.$disconnect();
+    process.exit(1);
+  }
+});
 
-const prisma = new PrismaClient()
+router.get("/traer", async (req, res) => {
+  const users = await User.findMany();
 
+  res.send(users);
+});
 
-
-async function main(){
-    //A ver si funca, crear un registro
-    const post = await prisma.User.create({
-        data:{
-           name : 'pepe',
-           email: 'santi'
-        }
-    })
-    console.log(post)
-
-}
-//Permite catchear el errror en caso de que exista, y una vez finalizado corta prisma,no mantiene la conexion abierta
-main()
-    .catch((e)=>{
-        console.log(e)
-    })
-    .finally(async ()=> {
-        await prisma.$disconnect()
-    })
-// const route = express.Router()
-
-
-// route.get('/',(rec,res)=>{
-//     res.send('funciona')
-// })
-
-
-// route.post('/',(rec,res)=>{
-
-//     prisma.cancha.create
-//     res.send('funciona')
-// })
-// module.exports = route
-
-
-
+module.exports = router;

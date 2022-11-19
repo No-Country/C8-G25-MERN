@@ -10,7 +10,18 @@ datasource db {
 }
 
 model User {
+  @@map(name:"user")
   id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  email String  
+  celular Int
+  cancha Cancha[]
+}
+
+model Cancha { 
+  @@map(name:"cancha")
+  id Int @id @default(autoincrement())
+  cancha Int
+  nombre Int
+  user User @relation(fields: [userId],references: [id]) 
+  userId  Int
 }
