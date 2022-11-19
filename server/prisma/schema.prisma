@@ -9,19 +9,43 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  @@map(name:"user")
-  id    Int     @id @default(autoincrement())
-  email String  
+model Persona {
+  id      Int      @id @default(autoincrement())
+  nombre  String
   celular Int
-  cancha Cancha[]
+  turnos  Turnos[]
 }
 
-model Cancha { 
-  @@map(name:"cancha")
+model Turnos {
+  id       Int       @id
+  idTurno  Persona   @relation(fields: [turnosId], references: [id])
+  turnosId Int
+  cancha   Int
+  dia      Dia[]
+  horario  Horario[]
+}
+
+model Dia {
+  id       Int    @id
+  idTurno  Int
+  dia      Int
+  turnos   Turnos @relation(fields: [turnosId], references: [id])
+  diaId    Int
+  turnosId Int
+}
+
+model Horario {
+  id        Int     @id
+  hora      Int
+  horarioId Int
+  Turnos    Turnos @relation(fields: [turnosId], references: [id])
+  turnosId  Int
+}
+
+
+
+model Cancha {
   id Int @id @default(autoincrement())
-  cancha Int
-  nombre Int
-  user User @relation(fields: [userId],references: [id]) 
-  userId  Int
+  nombreCancha String
+  
 }

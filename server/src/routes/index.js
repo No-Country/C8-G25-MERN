@@ -28,4 +28,7 @@ router.get("/traer", async (req, res) => {
   res.send(users);
 });
 
+
+
+
 module.exports = router;
