@@ -1,0 +1,27 @@
+.body {
+    background-color: #333333;
+    margin: 0;
+}
+
+.menu {
+    display: flex;
+    margin: 0 auto;
+    height: 50px;
+    width: 100%;
+    padding: 0;
+
+}
+
+.menuham {
+    color: #1ca68b;
+    z-index: 2;
+    margin-left: 20px;
+    margin-top: 15px;
+    position: absolute;
+    font-size: 1.4rem;
+}
+
+.logo {
+    margin: auto;
+    color :white
+}
