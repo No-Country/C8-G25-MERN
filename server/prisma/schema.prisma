@@ -38,28 +38,44 @@ datasource db {
 // }
 
 model Cancha {
-  id     Int      @id
+  id     Int     @id
   turnos Turno[]
-  name String
+  nombre String
+  info   String
 }
 
 model Turno {
-  id    Int    @id @default(autoincrement())
-  email String @unique
-  name  String
-  dia   Dia[]
+  id     Int    @id @default(autoincrement())
+  email  String
+  nombre String
 
-  //
+  // Hora 
+  hora      Hora   @relation(fields: [id_hora], references: [id])
+  id_hora   Int
+  // Dia
+  dia       Dia    @relation(fields: [id_dia], references: [id])
+  id_dia    Int
+  // Cancha
+  play      Cancha @relation(fields: [id_cancha], references: [id])
   id_cancha Int
-  play Cancha @relation(fields: [id_cancha], references: [id])
+  // User
+  usuario   User   @relation(fields: [id_user], references: [id])
+  id_user   Int
 }
 
 model Dia {
-  turnos   Turno @relation(fields: [authorId], references: [id])
-  authorId Int // relation scalar field  (used in the `@relation` attribute above) 
-  id       Int    @id @default(autoincrement())
+  turnos Turno[]
+  id     Int     @id @default(autoincrement())
 }
 
-model Horario {
-  id Int @id @default(autoincrement())
+model Hora {
+  id    Int     @id @default(autoincrement())
+  turno Turno[]
+}
+
+model User {
+  id     Int     @id @default(autoincrement())
+  nombre String?
+  email  String  @unique
+  turnos Turno[]
 }
