@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import { PrismaClient } from "@prisma/client";
 import styles from "../styles/Home.module.css";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer";
@@ -43,3 +44,5 @@ export default function Home() {
     </div>
   );
 }
+
+

@@ -1,3 +1,6 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -42,7 +45,6 @@ model Horario {
 
 model Cancha {
   id           Int     @id @default(autoincrement())
-  idCancha     Int
   nombreCancha String
   Turnos       Turnos? @relation(fields: [turnosId], references: [id])
   turnosId     Int?
