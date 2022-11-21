@@ -7,3 +7,19 @@
     color: white;
     justify-content: center;
 }
+
+.iconos {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.contenedorIconos {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    width: 100%;
+    max-width: 425px;
+    margin: 2%;
+}

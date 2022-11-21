@@ -3,6 +3,12 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer'
+import Link from 'next/link';
+import { IoLogoWhatsapp } from "react-icons/io";
+import { IconContext } from "react-icons";
+import {MdSportsSoccer} from "react-icons/md";
+
+
 
 export default function Home() {
   return (
@@ -17,25 +23,42 @@ export default function Home() {
 
       <main className={styles.container}>
         <div className={styles.header}>
-        <h3>
+        <h1>
           JUGÁ AL FÚTBOL
           <br />
-
           SIEMPRE
-        </h3>
-        <h6>Explorá las canchas disponibles</h6>
+        </h1>
+        <h5>Explorá las canchas disponibles</h5>
         </div>
         <div className={styles.cards}>
-        <p>Reservá tu cancha</p>
+        <p className={styles.reserva}>Reservá tu cancha</p>
+        <Link href="/">
         <div className={styles.box1}>
+        <MdSportsSoccer className={styles.pelota}/>
           <p>5 VS 5</p>
         </div>
+          </Link>
+          <Link href="/">
         <div className={styles.box2}>
+          <MdSportsSoccer className={styles.pelota}/>
           <p>7 VS 7</p>
         </div>
+          </Link>
+          <Link href="/">
         <div className={styles.box3}>
+          <MdSportsSoccer className={styles.pelota}/>
           <p>11 VS 11</p>
         </div>
+          </Link>
+
+          <IconContext.Provider value={{ color: "#1ca68b", size: "2rem" }}>
+        <div>
+
+        <IoLogoWhatsapp />
+        </div>
+</IconContext.Provider>
+
+
 
         </div>
       </main>

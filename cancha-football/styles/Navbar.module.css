@@ -6,12 +6,15 @@
 .menu {
     display: flex;
     flex-direction: row;
-    margin: 1rem;
     color: white;
+    margin: 1em 0 1em 0;
+    padding: 1em 0 1em 0;
 }
 
 .menuham {
     color: #1ca68b;
+    position: absolute;
+    left: 5%;
 }
 
 .logo {

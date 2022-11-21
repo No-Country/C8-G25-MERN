@@ -6,17 +6,18 @@ import { FaBars }  from "react-icons/fa"
 
 
 const Navbar = () => {
-    return (
+    return (<>
         <nav className={styles.body}>
             <menu className={styles.menu}>
-                <div className={styles.menuham}>
-                    <FaBars/>
-                </div>
-
+                <Link href="/">
+            <FaBars className={styles.menuham}/>
+                </Link>
+                
                 <Link href="/" className={styles.logo}> Logo
                 </Link>
             </menu>
         </nav>
+    </>
     );
 };
 
