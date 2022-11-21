@@ -5,6 +5,7 @@ import Image from "next/image";
 import styles from "../styles/Traer.module.css";
 const TraerCanchas = ({ fulvo }) => {
   const [guardarSeleccion, setguardarSeleccion] = useState();
+  console.log(guardarSeleccion);
   console.log(fulvo);
   return (
     <div className={styles.TraerCancha}>
@@ -33,7 +34,6 @@ export default TraerCanchas;
 export const getServerSideProps = async () => {
   const prisma = new PrismaClient();
   const fulvo = await prisma.cancha.findMany();
-  console.log(fulvo);
   return {
     props: {
       fulvo,
