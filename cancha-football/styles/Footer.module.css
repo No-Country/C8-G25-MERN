@@ -23,3 +23,45 @@
     max-width: 425px;
     margin: 2%;
 }
+
+.hecho {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 2%;
+}
+
+.hecho h6 {
+    margin-block-end: 0.5em;
+}
+
+.hecho h4 {
+    margin-block-start: 0.5em;
+}
+
+@media only screen and (min-width :750px) {
+    .body {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+}
+
+.tel {
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    align-items: center;
+}
+
+.redes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 2%;
+}
