@@ -11,25 +11,25 @@ async function crearCancha() {
     const cancha1 = await prisma.Cancha.create({
       data: {
         id: 1,
-        name: 'cancha1',
+        nombre: 'cancha1',
+        info: 'alguna info'
         // email: 'gonzapjl2@gmail.com'
-
       },
     })
     const cancha2 = await prisma.Cancha.create({
       data: {
         id: 2,
-        name: 'cancha2',
+        nombre: 'cancha2',
+        info: 'alguna info'
         // email: 'gonzapjl2@gmail.com'
-
       },
     })
     const cancha3 = await prisma.Cancha.create({
       data: {
         id: 3,
-        name: 'cancha3',
+        nombre: 'cancha3',
+        info: 'alguna info'
         // email: 'gonzapjl2@gmail.com'
-
       },
     })
     await prisma.$disconnect()

@@ -6,20 +6,32 @@ const route = express.Router()
 const prisma = new PrismaClient()
 
 route.post('/crear-turno', async (req, res) => {
+
+
     try {
-        await prisma.Turno.create({
+
+
+
+
+        const turno = await prisma.Turno.create({
             data: {
                 email: 'gonzalopjl222@gmail.com',
-                name: 'Reserva2',
-                cancha: {
-                    create: {
-                        id: 1,
-                        name: 'asdasd'
-                    }
-                }
+                nombre: 'Reserva2',
+                play: {
+                    connect: { id: 3 }
+                },
+
+
+
             }
         })
-        res.send('se agrego correctamente')
+
+
+
+
+
+
+        res.send(turno)
         await prisma.$disconnect()
     } catch (err) {
         console.log(err)
@@ -32,7 +44,10 @@ route.post('/crear-turno', async (req, res) => {
 
 route.get('/turnos', async (qer, res) => {
     try {
-        const data = await prisma.Turno.findMany({})
+        const data = await prisma.Turno.findMany({
+
+          
+        })
         res.send(data)
     } catch (err) {
         res.send(err)
@@ -41,8 +56,19 @@ route.get('/turnos', async (qer, res) => {
 
 route.get('/cancha', async (qer, res) => {
     try {
-        const data = await prisma.Cancha.findMany({})
+
+
+
+        const data = await prisma.Cancha.findMany({
+            include: {
+                turnos: true,
+
+            }
+        })
         res.send(data)
+
+
+
     } catch (err) {
         res.send(err)
     }
