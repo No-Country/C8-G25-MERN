@@ -1,8 +1,8 @@
 const { PrismaClient } = require("@prisma/client");
 const fulvo = [
-  { nombreCancha: "futbol 5", idCancha: 1 },
-  { nombreCancha: "futbol 7", idCancha: 2 },
-  { nombreCancha: "futbol 11", idCancha: 3 },
+  { nombre: "futbol 5", id: 1 },
+  { nombre: "futbol 7", id: 2 },
+  { nombre: "futbol 11", id: 3 },
 ];
 
 const prisma = new PrismaClient();
