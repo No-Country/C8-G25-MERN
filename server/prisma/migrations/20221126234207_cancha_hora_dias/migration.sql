@@ -1,2 +1,0 @@
--- AlterTable
-ALTER TABLE "Hora" ALTER COLUMN "horario" SET DATA TYPE TEXT;
