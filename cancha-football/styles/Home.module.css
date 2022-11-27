@@ -39,47 +39,5 @@
 
 }
 
-.cards {
-    width: 100%;
-    display: flex;
-    margin: 0 auto;
-    flex-direction: column;
-    height: 200px;
-    background-color: black;
-    text-align: center;
-    align-items: center;
-}
 
-
-
-
-.box {
-    background-color: white;
-    color: black;
-    border-radius: 7px;
-    width: 90%;
-    text-align: center;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    
-}
-@media (min-width:700px) {
-    .box{
-        width: 40%;
-    }
-
-    .cards{
-        height: 700px;
-    }
-}
-
-
-.cards{
-    height: auto;
-    color: white;
-}
-
-.cards .titulo{
-    font-size:2rem;
-}
 
