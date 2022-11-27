@@ -50,27 +50,29 @@ model Turno {
   nombre String
 
   // Hora 
-  hora      Hora?   @relation(fields: [id_hora], references: [id])
-  id_hora   Int?
+  hora      Hora   @relation(fields: [id_hora], references: [id])
+  id_hora   Int
   // Dia
-  dia       Dia?    @relation(fields: [id_dia], references: [id])
-  id_dia    Int?
+  dia       Dia    @relation(fields: [id_dia], references: [id])
+  id_dia    Int
   // Cancha
   play      Cancha @relation(fields: [id_cancha], references: [id])
   id_cancha Int
   // User
-  usuario   User?   @relation(fields: [id_user], references: [id])
+  usuario   User?  @relation(fields: [id_user], references: [id])
   id_user   Int?
 }
 
 model Dia {
   turnos Turno[]
   id     Int     @id @default(autoincrement())
+  dia     String
 }
 
 model Hora {
-  id    Int     @id @default(autoincrement())
-  turno Turno[]
+  id      Int     @id 
+  horario String
+  turno   Turno[]
 }
 
 model User {
