@@ -5,7 +5,7 @@ const route = Router();
 const prisma = new PrismaClient();
 
 ///////////// Metodos POST /////////////
-route.post("/crear", async (req:any, res:any) => {
+route.post("/crear", async (req, res) => {
   const { email, nombre, hora, dia, play} = req.body;
 
   if (!email || !nombre || !hora || !dia || !play) {
@@ -36,7 +36,7 @@ route.post("/crear", async (req:any, res:any) => {
 ///////////////////////////////////////
 
 ///////////// Metodos GET /////////////
-route.get("/", async (_req:any, res:any) => {
+route.get("/", async (req, res) => {
   try {
     const turnos = await prisma.Turno.findMany({
       include: {
