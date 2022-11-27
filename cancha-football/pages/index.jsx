@@ -1,11 +1,12 @@
 import Head from "next/head";
-import Image from "next/image";
-import { PrismaClient } from "@prisma/client";
+import axios from "axios";
 import styles from "../styles/Home.module.css";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer";
+import Welcome from "../components/Home/index.js";
+import TraerCanchas from "../components/TraerCanchas/TraerCanchas";
 
-export default function Home() {
+export default function Home({ canchas }) {
   return (
     <div className={styles.body}>
       <Head>
@@ -15,34 +16,26 @@ export default function Home() {
       </Head>
 
       <Navbar />
-
-      <main className={styles.container}>
-        <div className={styles.header}>
-          <h1>
-            JUGÁ AL FÚTBOL
-            <br />
-            SIEMPRE
-          </h1>
-          <h3>Explorá las canchas disponibles</h3>
-        </div>
-
-        <div className={styles.cards}>
-          <p className="titulo">Reservá tu cancha</p>
-          <div className={styles.box}>
-            <p>5 VS 5</p>
-          </div>
-          <div className={styles.box}>
-            <p>7 VS 7</p>
-          </div>
-          <div className={styles.box}>
-            <p>11 VS 11</p>
-          </div>
-        </div>
-      </main>
-
+      <Welcome />
+      <TraerCanchas canchas={canchas} />
       <Footer />
     </div>
   );
 }
 
+export const getStaticProps = async () => {
+  const canchas = [
+    { nombre: "5 vs 5", info: "alguna info", id: 1 },
+    { nombre: "7 vs 7", info: "alguna info", id: 2 },
+    { nombre: "11 vs 11", info: "alguna info", id: 3 },
+  ];
 
+  const data = await axios.get("http://localhost:3001/canchas");
+  // const toSend = await JSON.parse(data);
+  console.log("esto es data ", data);
+  return {
+    props: {
+      canchas: data,
+    },
+  };
+};

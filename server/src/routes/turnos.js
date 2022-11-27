@@ -1,8 +1,6 @@
 const { Router } = require("express");
-const { PrismaClient } = require("@prisma/client");
-
+const prisma = require('../db')
 const route = Router();
-const prisma = new PrismaClient();
 
 ///////////// Metodos POST /////////////
 route.post("/crear", async (req, res) => {
