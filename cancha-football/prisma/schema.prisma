@@ -1,0 +1,54 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+generator erd {
+  provider = "prisma-erd-generator"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Persona {
+  id      Int      @id @default(autoincrement())
+  nombre  String
+  celular Int
+  turnos  Turnos[]
+}
+
+model Turnos {
+  id       Int       @id
+  turnosId Int
+  idTurno  Persona   @relation(fields: [turnosId], references: [id])
+  dia      Dia[]
+  horario  Horario[]
+  cancha   Cancha[]
+}
+
+model Dia {
+  id       Int    @id
+  idTurno  Int
+  dia      Int
+  diaId    Int
+  turnosId Int
+  turnos   Turnos @relation(fields: [turnosId], references: [id])
+}
+
+model Horario {
+  id        Int    @id
+  hora      Int
+  horarioId Int
+  turnosId  Int
+  Turnos    Turnos @relation(fields: [turnosId], references: [id])
+}
+
+model Cancha {
+  id           Int     @id @default(autoincrement())
+  nombreCancha String
+  Turnos       Turnos? @relation(fields: [turnosId], references: [id])
+  turnosId     Int?
+}
