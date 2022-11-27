@@ -8,14 +8,22 @@ var bodyParser = require("body-parser");
 const prisma = new PrismaClient();
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
-
+app.use(express.urlencoded({ extended: true }))
 // parse application/json
 app.use(bodyParser.json());
 
 app.use(cors());
 
+app.get("/hola", async (req, res) => {
+console.log(req)
+  const post = await prisma.cancha.findMany();
+  res.status(200).json(post);
+});
 
+const PORT = 3006;
 
+app.listen(PORT, () => {
+  console.log(`Corriendo en el puerto ${PORT}`);
+});
 
 module.exports = router;

@@ -1,11 +1,16 @@
 import { PrismaClient } from "@prisma/client";
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 import styles from "../styles/Traer.module.css";
-const TraerCanchas = ({ fulvo }) => {
+
+
+const TraerCanchas = async ({ fulvo }) => {
   const [guardarSeleccion, setguardarSeleccion] = useState();
   console.log(guardarSeleccion);
   console.log(fulvo);
+
+
   return (
     <div className={styles.TraerCancha}>
       <div className={styles.Selecciona}>
