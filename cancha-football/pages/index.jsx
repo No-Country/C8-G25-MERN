@@ -35,26 +35,32 @@ export default function Home() {
 
         <Link href="/">
         <div className={styles.box1}>
+        <IconContext.Provider value={{ size: "5vh" }}>
         <MdSportsSoccer className={styles.pelota}/>
+        </IconContext.Provider>
           <p className={styles.pBox}>5 VS 5</p>
         </div>
           </Link>
 
           <Link href="/">
         <div className={styles.box2}>
+        <IconContext.Provider value={{ size: "5vh" }}>
           <MdSportsSoccer className={styles.pelota}/>
+          </IconContext.Provider>
           <p className={styles.pBox}>7 VS 7</p>
         </div>
           </Link>
           
           <Link href="/">
         <div className={styles.box3}>
+        <IconContext.Provider value={{ size: "5vh" }}>
           <MdSportsSoccer className={styles.pelota}/>
+          </IconContext.Provider>
           <p className={styles.pBox}>11 VS 11</p>
         </div>
           </Link>
 
-          <IconContext.Provider value={{ color: "#1ca68b", size: "2rem" }}>
+          <IconContext.Provider value={{ color: "#1ca68b", size: "6vh" }}>
         <div className={styles.wpp}>
           <Link href="/">
         <IoLogoWhatsapp />

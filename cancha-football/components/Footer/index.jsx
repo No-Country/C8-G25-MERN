@@ -14,7 +14,7 @@ const Footer = () => {
         <h4>No Country</h4>
 
             </div>
-        <IconContext.Provider value={{ size: "1.5rem" }}>
+        <IconContext.Provider value={{ size: "4vh" }}>
             <div className={styles.tel}>
         <CgPhone/>
         <p> +54 9 11 3458 6585</p>
@@ -24,21 +24,21 @@ const Footer = () => {
 
         <h5>REDES SOCIALES</h5>
         <div className={styles.contenedorIconos}>
-        <IconContext.Provider value={{ size: "1.3rem" }}>
+        <IconContext.Provider value={{ size: "4vh" }}>
         <div className={styles.iconos}>
             <Link href="/">
         <FaInstagram/>
             </Link>
         </div>
         </IconContext.Provider>
-        <IconContext.Provider value={{ size: "1.3rem" }}>
+        <IconContext.Provider value={{ size: "4vh" }}>
         <div className={styles.iconos}>
             <Link href="/">
         <FaFacebookSquare/>
             </Link>
         </div>
         </IconContext.Provider>
-        <IconContext.Provider value={{ size: "1.3rem" }}>
+        <IconContext.Provider value={{ size: "4vh" }}>
         <div className={styles.iconos}>
         <Link href="/">
         <FaTwitterSquare/>

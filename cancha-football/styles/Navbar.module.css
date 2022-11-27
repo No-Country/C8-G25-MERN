@@ -1,22 +1,28 @@
 .body {
     background-color: #333333;
     margin: 0;
+    height: 9vh;
 }
 
 .menu {
     display: flex;
     flex-direction: row;
     color: white;
-    margin: 1em 0 1em 0;
-    padding: 1em 0 1em 0;
+    margin: 0.8em 0 1em 0;
+    padding: 0.8em 0 1em 0;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    padding-inline-start: 0px;
 }
 
 .menuham {
     color: #1ca68b;
     position: absolute;
     left: 5%;
+    height: 5vh;
 }
 
 .logo {
     margin: auto;
+    font-size: 3vh;
 }
