@@ -1,34 +1,20 @@
-const express = require('express');
-const morgan = require('morgan');
-const bodyParser = require('body-parser');
-const routes = require('./routes/test.js')
-const routesTurno = require('./routes/turnos.js')
+const express = require("express");
+const morgan = require("morgan");
+const bodyParser = require("body-parser");
 
-
-
+const routesTurno = require("./routes/turnos.ts");
 
 ///// Creo la App /////
-const app = express()
-app.use(express.json())
-app.use('/', require("./routes/index.js"))
-app.name = 'Alquiler de canchas';
+const app = express();
 
-///// App use 
-app.use(morgan('dev'))
-
-///// Rutas
+app.name = "Alquiler de canchas";
+///// App use
+app.use(express.json());
+app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use('/turnos', routesTurno);
-app.use('/test', routes);
 
-
-
-
-
-
-
-
-
+///// Rutas
+app.use("/turnos", routesTurno);
 
 module.exports = app;
