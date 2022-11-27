@@ -8,14 +8,14 @@ var bodyParser = require("body-parser");
 const prisma = new PrismaClient();
 
 const app = express();
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }));
 // parse application/json
 app.use(bodyParser.json());
 
 app.use(cors());
 
 app.get("/hola", async (req, res) => {
-console.log(req)
+  console.log(req);
   const post = await prisma.cancha.findMany();
   res.status(200).json(post);
 });
