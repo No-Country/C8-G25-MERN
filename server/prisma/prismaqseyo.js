@@ -3,9 +3,9 @@ const { PrismaClient } = require('@prisma/client');
 
 const prisma = new PrismaClient()
 const canchas = [
-  { nombre: "futbol 5", info: 'alguna info', id: 1 },
-  { nombre: "futbol 7", info: 'alguna info', id: 2 },
-  { nombre: "futbol 11", info: 'alguna info', id: 3 },
+  { nombre: "5 vs 5", info: 'alguna info', id: 1 },
+  { nombre: "7 vs 7", info: 'alguna info', id: 2 },
+  { nombre: "11 vs 11", info: 'alguna info', id: 3 },
 ];
 const horas = [
   { horario: "10", id: 10 },
