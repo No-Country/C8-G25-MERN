@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import { IoLogoWhatsapp } from "react-icons/io";
+import { IconContext } from "react-icons";
+import { MdSportsSoccer } from "react-icons/md";
 import styles from "../../styles/Traer.module.css";
 
 const TraerCanchas = ({ canchas }) => {
@@ -18,11 +20,12 @@ const TraerCanchas = ({ canchas }) => {
   return (
     <div className={styles.cards}>
       <p className={styles.titulo}>Reservá tu cancha</p>
-
       {canchas.map((c) => (
-        <div key={c.id} className={styles.box}>
-          <h4 className={styles.titleCard}>{c.nombre}</h4>
-          {/* <p className={styles.paraCard}>{c.info}</p> */}
+        <div className={styles.box}>
+          <IconContext.Provider value={{ size: "5vh" }}>
+            <MdSportsSoccer className={styles.pelota} />
+          </IconContext.Provider>
+          <p className={styles.pBox}>{c.nombre}</p>
         </div>
       ))}
     </div>
