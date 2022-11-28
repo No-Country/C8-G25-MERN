@@ -10,6 +10,8 @@ const TraerCanchas = ({ canchas }) => {
   console.log(guardarSeleccion)
   // console.log(guardarSeleccion);
   console.log("Canchas es esto", canchas);
+  // console.log("Canchas es esto", canchas);
+  console.log(canchas)
 
   if (!canchas)
     return (
@@ -22,11 +24,9 @@ const TraerCanchas = ({ canchas }) => {
     <div className={styles.cards}>
       <p className={styles.titulo}>Reservá tu cancha</p>
       {canchas.map((c) => (
-        <div className={styles.box}>
-          <IconContext.Provider value={{ size: "5vh" }}>
-            <MdSportsSoccer className={styles.pelota} />
-          </IconContext.Provider>
-          <p className={styles.pBox}>{c.nombre}</p>
+        <div className={styles.box} key={c.id}>
+          <h4 className={styles.titleCard} onClick={()=> setguardarSeleccion(c.id)} >{c.nombre}</h4>
+          {/* <p className={styles.paraCard}>{c.info}</p> */}
         </div>
       ))}
     </div>
