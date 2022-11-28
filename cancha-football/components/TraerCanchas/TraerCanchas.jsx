@@ -7,8 +7,7 @@ const TraerCanchas = ({ canchas }) => {
   const [guardarSeleccion, setguardarSeleccion] = useState();
   console.log(guardarSeleccion)
   // console.log(guardarSeleccion);
-  // console.log("Canchas es esto", canchas);
-  console.log(canchas)
+  console.log("Canchas es esto", canchas);
 
   if (!canchas)
     return (
@@ -22,8 +21,8 @@ const TraerCanchas = ({ canchas }) => {
       <p className={styles.titulo}>Reservá tu cancha</p>
 
       {canchas.map((c) => (
-        <div className={styles.box} key={c.id}>
-          <h4 className={styles.titleCard} onClick={()=> setguardarSeleccion(c.id)} >{c.nombre}</h4>
+        <div key={c.id} className={styles.box}>
+          <h4 className={styles.titleCard}>{c.nombre}</h4>
           {/* <p className={styles.paraCard}>{c.info}</p> */}
         </div>
       ))}
