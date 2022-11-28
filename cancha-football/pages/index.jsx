@@ -24,15 +24,10 @@ export default function Home({ canchas }) {
 }
 
 export const getStaticProps = async () => {
-  const canchas = [
-    { nombre: "5 vs 5", info: "alguna info", id: 1 },
-    { nombre: "7 vs 7", info: "alguna info", id: 2 },
-    { nombre: "11 vs 11", info: "alguna info", id: 3 },
-  ];
+ 
 
-  const data = await axios.get("http://localhost:3001/canchas");
-  // const toSend = await JSON.parse(data);
-  console.log("esto es data ", data);
+  const {data} = await axios.get("http://localhost:3001/canchas");
+
   return {
     props: {
       canchas: data,
