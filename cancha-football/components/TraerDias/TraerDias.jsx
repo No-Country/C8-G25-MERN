@@ -1,6 +1,5 @@
+
 const TraerDias = () => {
-  return (
-    <div>que onda</div>
-  )
-}
-export default TraerDias
+  return <div>traer dias </div>;
+};
+export default TraerDias;

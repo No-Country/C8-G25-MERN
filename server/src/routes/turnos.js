@@ -34,9 +34,9 @@ route.post("/crear", async (req, res) => {
 ///////////////////////////////////////
 
 ///////////// Metodos GET /////////////
-route.get("/", async (req, res) => {
+route.get("/traerTurnos", async (req, res) => {
   try {
-    const turnos = await prisma.Turno.findMany({
+    const turnos = await prisma.turno.findMany({
       include: {
         dia: true,
         hora: true,
