@@ -13,19 +13,6 @@ const TraerCanchas = ({ canchas }) => {
     );
   // return <h2>Hola</h2>;
   return (
-<<<<<<< HEAD
-    <div className={styles.cards}>
-      <p className={styles.titulo}>Reservá tu cancha</p>
-      {canchas.map((c) => (
-        <div className={styles.box}>
-          <IconContext.Provider value={{ size: "5vh" }}>
-            <MdSportsSoccer className={styles.pelota} />
-          </IconContext.Provider>
-          <p className={styles.pBox}>{c.nombre}</p>
-        </div>
-      ))}
-    </div>
-=======
 
     <>
     {!guardarSeleccion ?  <div className={styles.cards}>
@@ -48,7 +35,6 @@ const TraerCanchas = ({ canchas }) => {
 
    
     </>
->>>>>>> b2f9e99df0322d6b4a8f9814dfdabeb02ffd079f
   );
 };
 
