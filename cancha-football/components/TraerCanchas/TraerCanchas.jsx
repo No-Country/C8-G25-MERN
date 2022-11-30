@@ -1,14 +1,9 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { IconContext } from "react-icons";
-import { MdSportsSoccer } from "react-icons/md";
 import styles from "../../styles/Traer.module.css";
+import TraerDias from "../TraerDias/TraerDias";
 
 const TraerCanchas = ({ canchas }) => {
   const [guardarSeleccion, setguardarSeleccion] = useState();
-  // console.log(guardarSeleccion);
-  console.log("Canchas es esto", canchas);
 
   if (!canchas)
     return (
@@ -18,6 +13,7 @@ const TraerCanchas = ({ canchas }) => {
     );
   // return <h2>Hola</h2>;
   return (
+<<<<<<< HEAD
     <div className={styles.cards}>
       <p className={styles.titulo}>Reservá tu cancha</p>
       {canchas.map((c) => (
@@ -29,6 +25,30 @@ const TraerCanchas = ({ canchas }) => {
         </div>
       ))}
     </div>
+=======
+
+    <>
+    {!guardarSeleccion ?  <div className={styles.cards}>
+      <p className={styles.titulo}>Reservá tu cancha</p>
+      {canchas.map((c) => (
+        <div
+          className={styles.box}
+          key={c.id}
+          onClick={() => setguardarSeleccion(c.id)}
+        >
+          <h4 className={styles.titleCard}>{c.nombre}</h4>
+          {/* <p className={styles.paraCard}>{c.info}</p> */}
+        </div>
+      ))}
+    </div> :  <TraerDias/> } 
+
+
+    
+    
+
+   
+    </>
+>>>>>>> b2f9e99df0322d6b4a8f9814dfdabeb02ffd079f
   );
 };
 

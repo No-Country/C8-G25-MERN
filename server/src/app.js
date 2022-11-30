@@ -8,6 +8,7 @@ const routeCanchas =require('./routes/canchas')
 
 ///// Creo la App /////
 const app = express();
+app.use(cors());
 
 app.name = "Alquiler de canchas";
 ///// App use
