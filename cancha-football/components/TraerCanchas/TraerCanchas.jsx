@@ -5,6 +5,7 @@ import TraerDias from "../TraerDias/TraerDias";
 const TraerCanchas = ({ canchas }) => {
   const [guardarSeleccion, setguardarSeleccion] = useState();
 
+  console.log(canchas);
   if (!canchas)
     return (
       <div className={styles.cards}>
@@ -12,30 +13,25 @@ const TraerCanchas = ({ canchas }) => {
       </div>
     );
   // return <h2>Hola</h2>;
-  return (
 
-    <>
-    {!guardarSeleccion ?  <div className={styles.cards}>
-      <p className={styles.titulo}>Reservá tu cancha</p>
-      {canchas.map((c) => (
-        <div
-          className={styles.box}
-          key={c.id}
-          onClick={() => setguardarSeleccion(c.id)}
-        >
-          <h4 className={styles.titleCard}>{c.nombre}</h4>
-          {/* <p className={styles.paraCard}>{c.info}</p> */}
-        </div>
-      ))}
-    </div> :  <TraerDias/> } 
+  if (!guardarSeleccion)
+    return (
+      <div className={styles.cards}>
+        <p className={styles.titulo}>Reservá tu cancha</p>
+        {canchas.map((c) => (
+          <div
+            className={styles.box}
+            key={c.id}
+            onClick={() => setguardarSeleccion(c.id)}
+          >
+            <h4 className={styles.titleCard}>{c.nombre}</h4>
+            {/* <p className={styles.paraCard}>{c.info}</p> */}
+          </div>
+        ))}
+      </div>
+    );
 
-
-    
-    
-
-   
-    </>
-  );
+  return <TraerDias  />;
 };
 
 export default TraerCanchas;

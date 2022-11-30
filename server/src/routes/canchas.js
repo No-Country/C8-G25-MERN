@@ -9,7 +9,7 @@ const route = Router()
 route.get('/', async (req, res) => {
 
     try {
-        const canchas = await prisma.cancha.findMany({})
+        const canchas = await prisma.Cancha.findMany({})
         res.send(canchas)
     } catch (err) {
         res.send(err);

@@ -8,6 +8,6 @@ export default function Welcome() {
             <br />
             SIEMPRE
         </h1>
-        <h3>Explorá las canchas disponibles</h3>
+
     </div>
 }

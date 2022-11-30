@@ -4,7 +4,7 @@ const route = Router();
 
 ///////////// Metodos POST /////////////
 route.post("/crear", async (req, res) => {
-  const { email, nombre, hora, dia, play} = req.body;
+  const { email, nombre, hora, dia, play, usuario } = req.body;
 
   if (!email || !nombre || !hora || !dia || !play) {
     res.send("Faltan datos para crear turnos");
