@@ -1,0 +1,13 @@
+.traerDias{
+    background-color: rgba(59, 61, 212, 0.827);
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.localizerP{
+    z-index: 3;
+    color: white;
+}

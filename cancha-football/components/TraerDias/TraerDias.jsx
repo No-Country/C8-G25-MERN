@@ -3,22 +3,26 @@ import TextField from "@mui/material/TextField";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import {esLocale} from "date-fns/locale/es";
-import "dayjs/locale/es-mx"
-import Button from "@mui/material/Button";
+import "dayjs/locale/es-mx";
+import styles from "../../styles/TraerDias.module.css";
 
 const TraerDias = () => {
   const [value, setValue] = useState(new Date());
 
-  console.log(value);
+  const { $D, $m, $y } = value;
+
   const [confirmar, setConfirmar] = useState(false);
   return (
-    <div className="traerDiasP">
-      <div>
-        <LocalizationProvider dateAdapter={AdapterDayjs} locale="es-mx">
+    <div className={styles.traerDias}>
+      <div className={styles.localizerP}>
+        <LocalizationProvider
+          dateAdapter={AdapterDayjs}
+          adapterLocale="es-mx"
+          className={styles.color}
+        >
           <DatePicker
             label="Ingrese la fecha"
-            inputFormat="dd-MMMM-yyyyy"
+            inputFormat="DD/MM/YYYY"
             value={value}
             onChange={(newValue) => {
               setValue(newValue);
@@ -36,3 +40,5 @@ const TraerDias = () => {
   );
 };
 export default TraerDias;
+
+export const getStaticProps = async () => {};
