@@ -5,11 +5,18 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import "dayjs/locale/es-mx";
 import styles from "../../styles/TraerDias.module.css";
-
+import enviarDia from "../../Helpers/enviarDia";
 const TraerDias = () => {
   const [value, setValue] = useState(new Date());
 
-  const { $D, $m, $y } = value;
+  const datos = {
+    dia: value.$D,
+    mes: value.$m,
+    anio: value.$y,
+  };
+  console.log(datos);
+  enviarDia(datos)
+
 
   const [confirmar, setConfirmar] = useState(false);
   return (
@@ -40,5 +47,3 @@ const TraerDias = () => {
   );
 };
 export default TraerDias;
-
-export const getStaticProps = async () => {};

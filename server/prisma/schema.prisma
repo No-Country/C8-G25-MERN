@@ -7,8 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-
 model Cancha {
   id     Int     @id
   turnos Turno[]
@@ -18,33 +16,12 @@ model Cancha {
 
 model Turno {
   id     Int    @id @default(autoincrement())
-  email  String
-  nombre String
+  User     User?   @relation(fields: [userId], references: [id])
+  userId   Int?
+  Cancha   Cancha? @relation(fields: [canchaId], references: [id])
+  canchaId Int?
+  Fecha DateTime  
 
-  // Hora 
-  hora      Hora   @relation(fields: [id_hora], references: [id])
-  id_hora   Int
-  // Dia
-  dia       Dia    @relation(fields: [id_dia], references: [id])
-  id_dia    Int
-  // Cancha
-  play      Cancha @relation(fields: [id_cancha], references: [id])
-  id_cancha Int
-  // User
-  usuario   User?  @relation(fields: [id_user], references: [id])
-  id_user   Int?
-}
-
-model Dia {
-  turnos Turno[]
-  id     Int     @id @default(autoincrement())
-  dia     String
-}
-
-model Hora {
-  id      Int     @id 
-  horario String
-  turno   Turno[]
 }
 
 model User {
