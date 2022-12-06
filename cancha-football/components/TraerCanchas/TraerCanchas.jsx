@@ -28,12 +28,6 @@ const TraerCanchas = ({ canchas }) => {
         </div>
       ))}
     </div> :  <TraerDias/> } 
-
-
-    
-    
-
-   
     </>
   );
 };
