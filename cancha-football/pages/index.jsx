@@ -24,9 +24,7 @@ export default function Home({ canchas }) {
 }
 
 export const getStaticProps = async () => {
- 
-
-  const {data} = await axios.get("http://localhost:3001/canchas");
+  const { data } = await axios.get("http://localhost:3002/canchas");
 
   return {
     props: {
