@@ -19,6 +19,7 @@ export default function Home({ canchas }) {
 
       <Navbar />
       <Welcome />
+
       <TraerCanchas canchas={canchas} />
       <Footer />
     </div>
