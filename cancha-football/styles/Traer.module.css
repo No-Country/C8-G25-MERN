@@ -19,37 +19,14 @@
   z-index: 1;
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  /* height: 55vh; */
+.title {
   color: white;
-  padding: 0;
-  position: relative;
-  margin: 0%;
-  padding: 8vh;
-}
-
-.header h1 {
-  margin-bottom: 15%;
-  align-self: center;
-  text-align: center;
-  margin: 0;
-  font-size: 4.2vh;
-}
-
-.header h5 {
-  align-self: center;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  font-size: 2.4vh;
-  font-weight: 400;
+  font-size: 1.5rem;
 }
 
 .cards {
   /* height: 77vh; */
-  background-image: url(/_next/static/media/fondo.9d279bc7.png);
+  background-image: url(../public/fondo.png);
   background-size: 100%;
   width: 100%;
   text-align: -webkit-center;
@@ -74,7 +51,7 @@
   padding-top: 20%;
   width: 100%;
   text-align: center;
-  font-size: 2.5vh;
+
 }
 
 .pelota {
@@ -84,19 +61,30 @@
 
 .pBox {
   margin-left: 7%;
+  
+}
+
+.titleCard{
+  text-align: center;
+  color: white;
+  margin: 1rem;
+  font-size: 2rem;
 }
 
 .box {
+  background-image: url(../public/fondo\ cards.jpg);
   display: flex;
   flex-direction: row;
-  background-color: white;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   color: black;
   border-radius: 7px;
   margin: 2%;
   width: auto;
   max-width: 150vh;
   padding: 0.3em;
-  justify-content: flex-start;
   position: relative;
   text-decoration: none;
   font-size: 3vh;

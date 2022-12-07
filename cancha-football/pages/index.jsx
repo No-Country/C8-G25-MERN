@@ -6,6 +6,8 @@ import Footer from "../components/Footer";
 import Welcome from "../components/Home/index.js";
 import TraerCanchas from "../components/TraerCanchas/TraerCanchas";
 
+
+
 export default function Home({ canchas }) {
   return (
     <div className={styles.body}>
