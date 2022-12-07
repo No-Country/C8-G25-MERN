@@ -1,8 +1,6 @@
 import axios from "axios"
 const enviarDia = (data)=>{
-    if(data.lenght >  0){
-        axios.post('/')
-    }
+    console.log(data);
 }
 
 export default enviarDia

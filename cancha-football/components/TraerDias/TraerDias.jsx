@@ -3,20 +3,21 @@ import TextField from "@mui/material/TextField";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import "dayjs/locale/es-mx";
 import styles from "../../styles/TraerDias.module.css";
 import enviarDia from "../../Helpers/enviarDia";
+import {es} from 'date-fns/locale/'
+
+
 const TraerDias = () => {
   const [value, setValue] = useState(new Date());
-
+  console.log(value);
   const datos = {
     dia: value.$D,
     mes: value.$m,
-    anio: value.$y,
+    anio: value.$
   };
   console.log(datos);
-  enviarDia(datos)
-
+  enviarDia(datos);
 
   const [confirmar, setConfirmar] = useState(false);
   return (
