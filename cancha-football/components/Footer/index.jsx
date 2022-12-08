@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Footer = () => {
     return (
-        <div className={styles.body}>
+        <div className={styles.body} id="#Contacto">
             <div className={styles.hecho}>
         <h6>Proyecto realizado para</h6>
         <h4>No Country</h4>

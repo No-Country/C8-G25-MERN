@@ -20,7 +20,7 @@ const Navbar = () => {
         {isMatch ? (
           <>
             <Typography>FUTGOL</Typography>
-            {/* <DrawerComp >{linksArray}</DrawerComp> */}
+            <DrawerComp>{linksArray}</DrawerComp>
           </>
         ) : (
           <Grid sx={{ placeItems: "center" }} container>
@@ -36,7 +36,10 @@ const Navbar = () => {
                 onChange={(e, val) => setValue(val)}
               >
                 {linksArray.map((linksArray, index) => (
-                  <Tab key={index} label={linksArray} />
+                  <Tab key={index} label={linksArray}>
+                    {" "}
+                    <a href={"#" + linksArray}></a>{" "}
+                  </Tab>
                 ))}
               </Tabs>
             </Grid>
