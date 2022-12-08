@@ -7,6 +7,7 @@ import styles from "../styles/Enviar.module.css";
 const enviarDia = ({ datos }) => {
   const [btnvalue, setBtnvalue] = useState("");
   const [mostrar, setMostrar] = useState(false);
+  const [generar, setGenerar] = useState("");
 
   const funcionRevisar = (hs) => {
     setBtnvalue(hs);
@@ -14,12 +15,13 @@ const enviarDia = ({ datos }) => {
   };
   const datosF = datos + " a las " + btnvalue + " hs ";
 
-  
-  const enviar = (datosF) => {  
-    const msjP = "Buenos dias queria alquilar la cancha el dia "
-    const url = `https://api.whatsapp.com/send?phone=542213148680&text=${escape(msjP)}+${escape(datosF)}`
-    console.log(url);
-  }
+  const enviar = (datosF) => {
+    const msjP = "Buenos dias queria alquilar la cancha el dia ";
+    const url = `https://api.whatsapp.com/send?phone=542213148680&text=${escape(
+      msjP
+    )}+${escape(datosF)}`;
+    setGenerar(url);
+  };
   return (
     <div className={styles.padreP}>
       <div>Seleccione una hora </div>
@@ -47,11 +49,14 @@ const enviarDia = ({ datos }) => {
               Cancelar
             </Button>
             <Button
-              onClick={ ()=> enviar(datosF)}
+              onClick={() => enviar(datosF)}
               variant="contained"
               aria-label="outlined primary button group"
             >
+              <a target="_blank" href={generar}>
+
               Enviar
+              </a>
             </Button>
           </ButtonGroup>
         </div>

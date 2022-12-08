@@ -44,6 +44,7 @@ const TraerDias = () => {
             <button
               className="btn-confirmar"
               onClick={() => EnviarFecha(datos)}
+              
             >
               Confirmar
             </button>
