@@ -9,6 +9,7 @@ const enviarDia = ({ datos }) => {
   const [mostrar, setMostrar] = useState(false);
   const [generar, setGenerar] = useState("");
 
+
   const funcionRevisar = (hs) => {
     setBtnvalue(hs);
     setMostrar(true);
@@ -45,6 +46,7 @@ const enviarDia = ({ datos }) => {
             <Button
               variant="contained"
               aria-label="outlined primary button group"
+              onClick={() => window.location.reload()}
             >
               Cancelar
             </Button>
