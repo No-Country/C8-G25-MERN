@@ -71,6 +71,10 @@
   font-size: 2rem;
 }
 
+.title{
+  color: white;
+}
+
 .box {
   background-image: url(../public/fondo\ cards.jpg);
   display: flex;
@@ -79,7 +83,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  color: black;
+  color: white;
   border-radius: 7px;
   margin: 2%;
   width: auto;
