@@ -16,7 +16,7 @@ const TraerCanchas = ({ canchas }) => {
 
     <>
     {!guardarSeleccion ?  <div className={styles.cards}>
-      <h4 className={styles.title}>Reservá tu cancha</h4>
+      <h4 className={styles.title}  >Reservá tu cancha</h4>
       {canchas.map((c) => (
         <div
           className={styles.box}

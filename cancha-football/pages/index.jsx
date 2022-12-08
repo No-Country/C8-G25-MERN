@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer";
 import Welcome from "../components/Home/index.js";
 import TraerCanchas from "../components/TraerCanchas/TraerCanchas";
+import Ubicacion from "./Ubicacion";
 
 export default function Home() {
   const canchas = [{ nombre: "5 vs 5", info: "alguna info", id: 1 }];
@@ -18,8 +19,9 @@ export default function Home() {
 
       <Navbar />
       <Welcome />
-
       <TraerCanchas canchas={canchas} />
+      <Ubicacion/>
+
       <Footer />
     </div>
   );

@@ -25,14 +25,16 @@ const enviarDia = ({ datos }) => {
   };
   return (
     <div className={styles.padreP}>
-      <div>Seleccione una hora </div>
+      <h4>Seleccione una hora </h4>
 
-      <ButtonGroup
-        variant="contained"
-        aria-label="outlined primary button group"
+      <ButtonGroup sx={{ display: 'flex', flexWrap: 'wrap', m: 1}}
+          variant="contained"
+          aria-label="outlined primary button group"
+          className={styles.contenedor}
+          color="secondary" 
       >
         {horas.map((hs) => (
-          <Button onClick={() => funcionRevisar(hs.horario)} key={hs.id}>
+          <Button onClick={() => funcionRevisar(hs.horario)} key={hs.id} sx={{ display: "flex", flexWrap: 'wrap' }}>
             {hs.horario}
           </Button>
         ))}
