@@ -50,7 +50,7 @@ const TraerDias = () => {
           </div>
         </div>
       ) : (
-        <EnviarDia/>
+        <EnviarDia datos={datos} />
       )}
     </>
   );
