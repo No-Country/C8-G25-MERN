@@ -21,13 +21,13 @@ const TraerCanchas = ({ canchas }) => {
         <div
           className={styles.box}
           key={c.id}
-          onClick={() => setguardarSeleccion(c.id)}
+          onClick={() => setguardarSeleccion(c.nombre)}
         >
           <h4 className={styles.titleCard}>{c.nombre}</h4>
           {/* <p className={styles.paraCard}>{c.info}</p> */}
         </div>
       ))}
-    </div> :  <TraerDias/> } 
+    </div> :  <TraerDias guardarSeleccion={guardarSeleccion} /> } 
 
 
     

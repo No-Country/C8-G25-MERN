@@ -8,7 +8,7 @@ import TraerCanchas from "../components/TraerCanchas/TraerCanchas";
 import Ubicacion from "./Ubicacion";
 
 export default function Home() {
-  const canchas = [{ nombre: "5 vs 5", info: "alguna info", id: 1 }];
+  const canchas = [{ nombre: "5 vs 5", info: "alguna info", id: 1 },{ nombre: "7 vs 7", info: "alguna info", id: 2 },{ nombre: "11 vs 11", info: "alguna info", id: 3 }];
   return (
     <div className={styles.body}>
       <Head>

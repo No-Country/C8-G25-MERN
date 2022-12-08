@@ -4,11 +4,10 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import { useState } from "react";
 import styles from "../styles/Enviar.module.css";
 
-const enviarDia = ({ datos }) => {
+const enviarDia = ({ datos, info }) => {
   const [btnvalue, setBtnvalue] = useState("");
   const [mostrar, setMostrar] = useState(false);
   const [generar, setGenerar] = useState("");
-
 
   const funcionRevisar = (hs) => {
     setBtnvalue(hs);
@@ -17,7 +16,7 @@ const enviarDia = ({ datos }) => {
   const datosF = datos + " a las " + btnvalue + " hs ";
 
   const enviar = (datosF) => {
-    const msjP = "Buenos dias queria alquilar la cancha el dia ";
+    const msjP = `Buenos dias  queria alquilar la cancha + ${info} el dia `;
     const url = `https://api.whatsapp.com/send?phone=542213148680&text=${escape(
       msjP
     )}+${escape(datosF)}`;
@@ -27,14 +26,19 @@ const enviarDia = ({ datos }) => {
     <div className={styles.padreP}>
       <h4>Seleccione una hora </h4>
 
-      <ButtonGroup sx={{ display: 'flex', flexWrap: 'wrap', m: 1}}
-          variant="contained"
-          aria-label="outlined primary button group"
-          className={styles.contenedor}
-          color="secondary" 
+      <ButtonGroup
+        sx={{ display: "flex", flexWrap: "wrap", m: 1 }}
+        variant="contained"
+        aria-label="outlined primary button group"
+        className={styles.contenedor}
+        color="secondary"
       >
         {horas.map((hs) => (
-          <Button onClick={() => funcionRevisar(hs.horario)} key={hs.id} sx={{ display: "flex", flexWrap: 'wrap' }}>
+          <Button
+            onClick={() => funcionRevisar(hs.horario)}
+            key={hs.id}
+            sx={{ display: "flex", flexWrap: "wrap" }}
+          >
             {hs.horario}
           </Button>
         ))}
@@ -58,8 +62,7 @@ const enviarDia = ({ datos }) => {
               aria-label="outlined primary button group"
             >
               <a target="_blank" href={generar}>
-
-              Enviar
+                Enviar
               </a>
             </Button>
           </ButtonGroup>

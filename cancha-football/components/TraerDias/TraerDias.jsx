@@ -6,16 +6,13 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import styles from "../../styles/TraerDias.module.css";
 import EnviarDia from "../../Helpers/EnviarDia";
 import { es } from "date-fns/locale/";
-import Button from '@mui/material/Button';
-import { style } from "@mui/system";
+import Button from "@mui/material/Button";
 
-
-
-const TraerDias = () => {
-
+const TraerDias = ({ guardarSeleccion }) => {
   const [value, setValue] = useState(new Date());
   var options = { year: "numeric", month: "long", day: "numeric" };
   const datos = value.$d?.toLocaleDateString("es-ES", options);
+  const info = guardarSeleccion;
   console.log(datos);
 
   const [confirmar, setConfirmar] = useState(false);
@@ -27,39 +24,54 @@ const TraerDias = () => {
   return (
     <>
       {!confirmar ? (
-        
         <div className={styles.traerDias}>
           <div className={styles.localizerP}>
-            <LocalizationProvider  
+            <LocalizationProvider
               dateAdapter={AdapterDayjs}
               locale={es}
-              color="secondary"
-              className={styles.color}>
-              <DatePicker className={styles.date}
-                label="Ingrese la fecha" 
+              color="primary"
+              className={styles.color}
+              sx={{
+                svg: { color: "#fff" },
+                input: { color: "#fff" },
+              }}
+            >
+              <DatePicker
+                className={styles.date}
+                label="Ingrese la fecha"
                 inputFormat="DD/MM/YYYY"
                 value={value}
-              
+                sx={{
+                  svg: { color: "#fff" },
+                  input: { color: "#fff" },
+                }}
                 onChange={(newValue) => {
                   setValue(newValue);
                 }}
-                renderInput={(params) => <TextField {...params}  />}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    sx={{
+                      svg: { color: "#fff" },
+                      input: { color: "#fff" },
+                    }}
+                  />
+                )}
               />
             </LocalizationProvider>
           </div>
           <div>
-            <Button variant="contained"
+            <Button
+              variant="contained"
               className="btn-confirmar"
               onClick={() => EnviarFecha(datos)}
-              
             >
               Confirmar
             </Button>
           </div>
         </div>
-      
       ) : (
-        <EnviarDia datos={datos} />
+        <EnviarDia datos={datos} info={info} />
       )}
     </>
   );
