@@ -6,9 +6,8 @@ import Footer from "../components/Footer";
 import Welcome from "../components/Home/index.js";
 import TraerCanchas from "../components/TraerCanchas/TraerCanchas";
 
-
-
-export default function Home({ canchas }) {
+export default function Home() {
+  const canchas = [{ nombre: "5 vs 5", info: "alguna info", id: 1 }];
   return (
     <div className={styles.body}>
       <Head>
@@ -25,13 +24,3 @@ export default function Home({ canchas }) {
     </div>
   );
 }
-
-export const getStaticProps = async () => {
-  const { data } = await axios.get("http://localhost:3002/canchas");
-
-  return {
-    props: {
-      canchas: data,
-    },
-  };
-};

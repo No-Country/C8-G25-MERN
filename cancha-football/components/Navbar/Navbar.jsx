@@ -26,7 +26,7 @@ const Navbar = () => {
            {  isMatch ? (
                 <>
                     <Typography >FUTGOL</Typography>
-                    <DrawerComp >{linksArray}</DrawerComp>
+                    {/* <DrawerComp >{linksArray}</DrawerComp> */}
 
                 </>
                 ) : (   

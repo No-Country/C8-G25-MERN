@@ -10,14 +10,12 @@ import {es} from 'date-fns/locale/'
 
 const TraerDias = () => {
   const [value, setValue] = useState(new Date());
-  console.log(value);
-  const datos = {
-    dia: value.$D,
-    mes: value.$m,
-    anio: value.$
-  };
-  console.log(datos);
-  enviarDia(datos);
+  var options = { year: 'numeric', month: 'long', day: 'numeric' };
+  console.log(
+    value.$d?.toLocaleDateString("es-ES", options)
+  );
+  
+  // enviarDia(datos);
 
   const [confirmar, setConfirmar] = useState(false);
   return (
