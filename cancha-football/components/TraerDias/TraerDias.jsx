@@ -51,6 +51,7 @@ const TraerDias = () => {
             <Button variant="contained"
               className="btn-confirmar"
               onClick={() => EnviarFecha(datos)}
+              
             >
               Confirmar
             </Button>
@@ -58,7 +59,7 @@ const TraerDias = () => {
         </div>
       
       ) : (
-        <EnviarDia/>
+        <EnviarDia datos={datos} />
       )}
     </>
   );

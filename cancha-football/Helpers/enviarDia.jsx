@@ -1,26 +1,71 @@
 import horas from "./Horas";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
+<<<<<<< HEAD
 import styles from "../styles/EnviarDias.module.css";
+=======
+import { useState } from "react";
+import styles from "../styles/Enviar.module.css";
+>>>>>>> 19db92648beceb1100ae4e24f1b959d70d07f364
 
-const enviarDia = () => {
+const enviarDia = ({ datos }) => {
+  const [btnvalue, setBtnvalue] = useState("");
+  const [mostrar, setMostrar] = useState(false);
+  const [generar, setGenerar] = useState("");
+
+  const funcionRevisar = (hs) => {
+    setBtnvalue(hs);
+    setMostrar(true);
+  };
+  const datosF = datos + " a las " + btnvalue + " hs ";
+
+  const enviar = (datosF) => {
+    const msjP = "Buenos dias queria alquilar la cancha el dia ";
+    const url = `https://api.whatsapp.com/send?phone=542213148680&text=${escape(
+      msjP
+    )}+${escape(datosF)}`;
+    setGenerar(url);
+  };
   return (
-    <>
-      <div className={styles.hora}>
-      <h3 className={styles.probar} >Seleccione un horario</h3>
-        <ButtonGroup sx={{ display: 'flex', flexWrap: 'wrap', }}
-          variant="contained"
-          aria-label="outlined primary button group"
-          className={styles.contenedor}
-          color="secondary"
-        >
-          {horas.map((hs) => (
-            <Button key={hs.id} sx={{ display: "flex", flexWrap: 'wrap',
-            m: 1, }}>{hs.horario}</Button>
-          ))}
-        </ButtonGroup>
-      </div>
-    </>
+    <div className={styles.padreP}>
+      <div>Seleccione una hora </div>
+
+      <ButtonGroup
+        variant="contained"
+        aria-label="outlined primary button group"
+      >
+        {horas.map((hs) => (
+          <Button onClick={() => funcionRevisar(hs.horario)} key={hs.id}>
+            {hs.horario}
+          </Button>
+        ))}
+      </ButtonGroup>
+
+      {mostrar ? (
+        <div className={styles.confirmarP}>
+          <p>Usted a selecionado</p>
+          <p>{btnvalue ? datosF : ""}</p>
+          <ButtonGroup>
+            <Button
+              variant="contained"
+              aria-label="outlined primary button group"
+            >
+              Cancelar
+            </Button>
+            <Button
+              onClick={() => enviar(datosF)}
+              variant="contained"
+              aria-label="outlined primary button group"
+            >
+              <a target="_blank" href={generar}>
+
+              Enviar
+              </a>
+            </Button>
+          </ButtonGroup>
+        </div>
+      ) : null}
+    </div>
   );
 };
 export default enviarDia;
