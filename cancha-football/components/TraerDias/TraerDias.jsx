@@ -33,15 +33,17 @@ const TraerDias = () => {
             <LocalizationProvider  
               dateAdapter={AdapterDayjs}
               locale={es}
+              color="secondary"
               className={styles.color}>
               <DatePicker className={styles.date}
                 label="Ingrese la fecha" 
                 inputFormat="DD/MM/YYYY"
                 value={value}
+              
                 onChange={(newValue) => {
                   setValue(newValue);
                 }}
-                renderInput={(params) => <TextField {...params} />}
+                renderInput={(params) => <TextField {...params}  />}
               />
             </LocalizationProvider>
           </div>

@@ -7,16 +7,16 @@ const enviarDia = () => {
   return (
     <>
       <div className={styles.hora}>
-        <div className={styles.probar} >enviarDia</div>
-        <ButtonGroup sx={{ display: 'flex', flexWrap: 'wrap',  p: 1,
-          m: 1, }}
+      <h3 className={styles.probar} >Seleccione un horario</h3>
+        <ButtonGroup sx={{ display: 'flex', flexWrap: 'wrap', }}
           variant="contained"
           aria-label="outlined primary button group"
           className={styles.contenedor}
           color="secondary"
         >
           {horas.map((hs) => (
-            <Button key={hs.id} sx={{ flexWrap: 'wrap' }}>{hs.horario}</Button>
+            <Button key={hs.id} sx={{ display: "flex", flexWrap: 'wrap',
+            m: 1, }}>{hs.horario}</Button>
           ))}
         </ButtonGroup>
       </div>
