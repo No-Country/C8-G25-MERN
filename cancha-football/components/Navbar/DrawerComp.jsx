@@ -3,6 +3,7 @@ import { Drawer,Tooltip, IconButton, List, ListItemButton, ListItemIcon, ListIte
 import { useState } from 'react'
  import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import linksArray from '../../utils/NavLinks';
+import styles from '../../styles/DrawerCom.module.css'
 
 const DrawerComp = () => {
   const [open, setOpen] = useState(false);
@@ -20,12 +21,13 @@ const DrawerComp = () => {
           ))}
         </List>
       </Drawer>
-      <Tooltip title="Add" placement="right">
+      <Tooltip title="Add" placement="right" sx={{display:"flex" , m:0,p:0} } className={styles.iconBtn}>
         <IconButton
-          sx={{ display:"flex", width: "100vw",justifyContent: 'flex-start', m: 0 }}
+          sx={{ display:"flex", width: "85%", m: 0 ,p:0}}
           onClick={() => setOpen(!open)}
+          className={styles.iconBtn}
         >
-          <MenuRoundedIcon sx={{ color: "white", display: "flex", width:"100%" }} />
+          <MenuRoundedIcon  className={styles.menu} />
         </IconButton>
       </Tooltip>
     </>
