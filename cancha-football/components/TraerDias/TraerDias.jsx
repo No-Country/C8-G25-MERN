@@ -4,47 +4,55 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import styles from "../../styles/TraerDias.module.css";
-import enviarDia from "../../Helpers/enviarDia";
-import {es} from 'date-fns/locale/'
-
+import EnviarDia from "../../Helpers/EnviarDia";
+import { es } from "date-fns/locale/";
 
 const TraerDias = () => {
   const [value, setValue] = useState(new Date());
-  console.log(value);
-  const datos = {
-    dia: value.$D,
-    mes: value.$m,
-    anio: value.$
-  };
+  var options = { year: "numeric", month: "long", day: "numeric" };
+  const datos = value.$d?.toLocaleDateString("es-ES", options);
   console.log(datos);
-  enviarDia(datos);
 
   const [confirmar, setConfirmar] = useState(false);
+
+  const EnviarFecha = () => {
+    setConfirmar(true);
+  };
+
   return (
-    <div className={styles.traerDias}>
-      <div className={styles.localizerP}>
-        <LocalizationProvider
-          dateAdapter={AdapterDayjs}
-          adapterLocale="es-mx"
-          className={styles.color}
-        >
-          <DatePicker
-            label="Ingrese la fecha"
-            inputFormat="DD/MM/YYYY"
-            value={value}
-            onChange={(newValue) => {
-              setValue(newValue);
-            }}
-            renderInput={(params) => <TextField {...params} />}
-          />
-        </LocalizationProvider>
-      </div>
-      <div>
-        <button className="btn-confirmar" onClick={() => setConfirmar(true)}>
-          Confirmar
-        </button>
-      </div>
-    </div>
+    <>
+      {!confirmar ? (
+        <div className={styles.traerDias}>
+          <div className={styles.localizerP}>
+            <LocalizationProvider
+              dateAdapter={AdapterDayjs}
+              locale={es}
+              className={styles.color}
+            >
+              <DatePicker
+                label="Ingrese la fecha"
+                inputFormat="DD/MM/YYYY"
+                value={value}
+                onChange={(newValue) => {
+                  setValue(newValue);
+                }}
+                renderInput={(params) => <TextField {...params} />}
+              />
+            </LocalizationProvider>
+          </div>
+          <div>
+            <button
+              className="btn-confirmar"
+              onClick={() => EnviarFecha(datos)}
+            >
+              Confirmar
+            </button>
+          </div>
+        </div>
+      ) : (
+        <EnviarDia/>
+      )}
+    </>
   );
 };
 export default TraerDias;
