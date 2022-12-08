@@ -8,4 +8,12 @@
 .padreP{
     text-align: center;
     color: white;
+    background-color: rgba(32, 32, 146, 0.948);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    padding: 2%;
 }

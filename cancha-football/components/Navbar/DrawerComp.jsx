@@ -30,10 +30,10 @@ const DrawerComp = () => {
       </Drawer>
       <Tooltip title="Add" placement="right">
         <IconButton
-          sx={{ margin: "auto", width: "10vw" }}
+          sx={{ display:"flex", width: "100vw",justifyContent: 'flex-start', m: 0 }}
           onClick={() => setOpen(!open)}
         >
-          <MenuRoundedIcon sx={{ color: "white" }} />
+          <MenuRoundedIcon sx={{ color: "white", display: "flex", width:"100%" }} />
         </IconButton>
       </Tooltip>
     </>
