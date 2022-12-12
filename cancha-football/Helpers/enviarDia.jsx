@@ -16,7 +16,7 @@ const enviarDia = ({ datos, info }) => {
   const datosF = datos + " a las " + btnvalue + " hs ";
 
   const enviar = (datosF) => {
-    const msjP = `Buenos dias  queria alquilar la cancha + ${info} el dia `;
+    const msjP = `Hola, quiero alquilar la cancha + ${info} el dia `;
     const url = `https://api.whatsapp.com/send?phone=542213148680&text=${escape(
       msjP
     )}+${escape(datosF)}`;
